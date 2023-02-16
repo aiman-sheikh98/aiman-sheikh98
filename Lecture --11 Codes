@@ -133,3 +133,70 @@ void removeConsecutiveDuplicates(char input[]) {
     }
     input[j] = '\0';
 }
+
+ 3] <<<<<<<< ////[ASSIGNMENT CODES--Remove Consecutive Duplicates
+ 
+void reverseEachWord(char input[]) {
+    int start = 0, end = 0;
+    while (input[end] != '\0') {
+        if (input[end] == ' ') {
+            // Reverse the current word
+            int i, j;
+            for (i = start, j = end-1; i < j; i++, j--) {
+                char temp = input[i];
+                input[i] = input[j];
+                input[j] = temp;
+            }
+            // Move to the next word
+            start = end + 1;
+        }
+        end++;
+    }
+    // Reverse the last word
+    int i, j;
+    for (i = start, j = end-1; i < j; i++, j--) {
+        char temp = input[i];
+        input[i] = input[j];
+        input[j] = temp;
+    }
+}
+
+
+ 4] <<<<<<<< ////[ASSIGNMENT CODES--Remove character 
+
+void removeAllOccurrencesOfChar(char input[], char c) {
+    int i, j;
+    for (i = 0, j = 0; input[i] != '\0'; i++) {
+        if (input[i] != c) {
+            input[j++] = input[i];
+        }
+    }
+    input[j] = '\0';
+}
+
+ 5] <<<<<<<< ////[ASSIGNMENT CODES--Highest Occuring Character >>\\\
+ 
+ char highestOccurringChar(char input[]) {
+    int counts[256] = {0};  // Initialize counts to zero
+
+    // Traverse the input array and update the count of each character
+    for (int i = 0; input[i] != '\0'; i++) {
+        counts[(int)input[i]]++;
+    }
+
+    char highestChar = '\0';
+    int highestCount = 0;
+
+    // Traverse the count array to find the character with the highest count
+    for (int i = 0; i < 256; i++) {
+        if (counts[i] > highestCount) {
+            highestChar = (char)i;
+            highestCount = counts[i];
+        }
+    }
+
+    return highestChar;
+}
+
+ 
+ 6] <<<<<<<< ////[ASSIGNMENT CODES--
