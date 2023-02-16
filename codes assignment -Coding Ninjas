@@ -1,0 +1,21 @@
+   \\\\_______CODE FOR BINARY SEARCH________////
+  
+  public static int binarySearch(int[] arr, int x) {
+        int left = 0; // left pointer initialized to 0
+        int right = arr.length - 1; // right pointer initialized to length-1
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2; // calculate the mid index
+
+            if (arr[mid] == x) { // if element found at mid index, return mid
+                return mid;
+            } else if (arr[mid] < x) { // if element is greater than mid, search in right half
+                left = mid + 1;
+            } else { // if element is less than mid, search in left half
+                right = mid - 1;
+            }
+        }
+
+        return -1; // element not found in the array
+    }
+}
