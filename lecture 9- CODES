@@ -1,0 +1,28 @@
+ \\\\ ______SORT-- 0-1______ ////
+
+public class Solution {  
+
+    public static void sortZeroesAndOne(int[] arr) {
+    	//Your code goes here
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left < right) {
+            // Find the next 1 from the left side
+            while (arr[left] == 0 && left < right) {
+                left++;
+            }
+            // Find the next 0 from the right side
+            while (arr[right] == 1 && left < right) {
+                right--;
+            }
+            // Swap the values
+            if (left < right) {
+                arr[left] = 0;
+                arr[right] = 1;
+                left++;
+                right--;
+            }
+        }
+    }
+}
