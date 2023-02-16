@@ -21,7 +21,7 @@
 }
 
 
-___________//// SELECTION SORT////__________
+___________//// SELECTION SORT////__________ IN C++ CODE
 
 void selectionSort(int *arr, int n)
 {
@@ -41,3 +41,33 @@ void selectionSort(int *arr, int n)
         arr[minIndex] = temp;
     }
 }
+
+
+
+
+
+___________//// SELECTION SORT////__________ IN JAVA 
+
+public class Solution {
+
+    public static void selectionSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i; // assume the first element is the minimum
+
+            // find the minimum element in the unsorted part of the array
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+
+            // swap the minimum element with the first element in the unsorted part of the array
+            int temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+    }
+
+}
+
