@@ -1,0 +1,135 @@
+ //>> String Palindrome <<\\\
+
+public class Solution {
+
+	public static boolean isPalindrome(String str) {
+		//Your code goes here
+		  int i = 0;
+        int j = str.length() - 1;
+        while (i < j) {
+            if (str.charAt(i) != str.charAt(j)) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+	}
+}
+
+
+   //>> All substrings <<\\\
+
+public class Solution {
+    public static void printSubstrings(String str) {
+        int n = str.length();
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j <= n; j++) {
+                System.out.println(str.substring(i, j));
+            }
+        }
+    }
+}
+
+
+
+ //>> Reverse String Wordwise <<\\\
+
+public class Solution {
+	public static String reverseWordWise(String input) {
+		// Split the input string into an array of words
+		String[] words = input.split(" ");
+
+		// Reverse the array of words
+		int start = 0;
+		int end = words.length - 1;
+		while (start < end) {
+			String temp = words[start];
+			words[start] = words[end];
+			words[end] = temp;
+			start++;
+			end--;
+		}
+
+		// Join the reversed array of words into a new string
+		String reversed = String.join(" ", words);
+
+		return reversed;
+	}
+}
+
+
+
+
+
+ <<<<<<<< ////[ASSIGNMENT CODES]\\\\\  >>>>> (C++)
+ 
+ bool isPermutation(char input1[], char input2[]) {
+    // Write your code here
+    int len1 = strlen(input1);
+    int len2 = strlen(input2);
+    if (len1 != len2) {
+      return false;
+    }
+     int counts[256] = {0};
+     for (int i = 0; i < len1; i++) {
+       counts[(int)input1[i]]++;
+     }
+      for (int i = 0; i < len2; i++) {
+        counts[(int)input2[i]]--;
+    }
+  for (int i = 0; i < 256; i++) {
+        if (counts[i] != 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+ 
+        OR 
+        
+        
+        
+        bool isPermutation(char input1[], char input2[]) {
+    // Check if the lengths of the two arrays are equal
+    int len1 = strlen(input1);
+    int len2 = strlen(input2);
+    if (len1 != len2) {
+        return false;
+    }
+
+    // Create an integer array to store the count of each character in the first array
+    int counts[256] = {0};
+
+    // Traverse the first array and update the count of each character in the integer array
+    for (int i = 0; i < len1; i++) {
+        counts[(int)input1[i]]++;
+    }
+
+    // Traverse the second array and decrement the count of each character in the integer array
+    for (int i = 0; i < len2; i++) {
+        counts[(int)input2[i]]--;
+    }
+
+    // Check if all the counts in the integer array are zero
+    for (int i = 0; i < 256; i++) {
+        if (counts[i] != 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+  2] <<<<<<<< ////[ASSIGNMENT CODES--Remove Consecutive Duplicates]\\\\\ 
+
+void removeConsecutiveDuplicates(char input[]) {
+    int i, j;
+    for (i = 0, j = 0; input[i] != '\0'; i++) {
+        if (input[i] != input[i+1]) {
+            input[j++] = input[i];
+        }
+    }
+    input[j] = '\0';
+}
