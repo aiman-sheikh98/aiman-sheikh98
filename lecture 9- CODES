@@ -18,11 +18,49 @@ public class Solution {
             }
             // Swap the values
             if (left < right) {
-                arr[left] = 0;
+                arr[left] = 0;                                                     
                 arr[right] = 1;
                 left++;
                 right--;
             }
         }
+    }
+}
+
+
+
+5]]  \\\\ ______Triplet Sum______ ////Triplet Sum
+
+
+public static int findTriplet(int[] arr, int x) {
+    int n = arr.length;
+    int count = 0;
+    for (int i = 0; i < n - 2; i++) {
+        for (int j = i + 1; j < n - 1; j++) {
+            for (int k = j + 1; k < n; k++) {
+                if (arr[i] + arr[j] + arr[k] == x) {
+                    count++;
+                }
+            }
+        }
+    }
+    return count;
+}
+
+         <<<<<< PAIR SUM >>>
+public class Solution {  
+
+    public static int pairSum(int arr[], int x) {
+    	//Your code goes here
+         int count = 0;
+    for (int i = 0; i < arr.length; i++) {
+        for (int j = i + 1; j < arr.length; j++) {
+            if (arr[i] + arr[j] == x) {
+                count++;
+            }
+        }
+    }
+    return count;
+    
     }
 }
